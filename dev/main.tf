@@ -4,6 +4,6 @@ provider "google" {
 }
 
 resource "google_storage_bucket" "my_bucket" {
-  name          = "novaro-test-bucket-01"
+  name          = "novaro-test-bucket-02"
   location      = "us-central1"
 }
