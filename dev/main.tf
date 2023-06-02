@@ -13,6 +13,6 @@ provider "google" {
 
 ## Storage_Bucket_Code ##
 resource "google_storage_bucket" "my_bucket" {
-  name          = "novaro-test-bucket-02"
+  name          = "novaro-test-bucket-00"
   location      = "us-central1"
 }
