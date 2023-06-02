@@ -1,6 +1,6 @@
 provider "google" {
   #credentials = file("<path_to_service_account_key_json>")
-  project     = "	anuroop-lab"
+  project     = "	novaro-dev-2023"
   region      = "us-central-1"
 }
 
