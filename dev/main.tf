@@ -11,7 +11,7 @@ provider "google" {
   region      = "us-central-1"
 }
 
-## Storage_Bucket_Code ##
+## Storage_Bucket_Code ## Modify below Name ##
 resource "google_storage_bucket" "my_bucket" {
   name          = "novaro-test-bucket-11"
   location      = "us-central1"
