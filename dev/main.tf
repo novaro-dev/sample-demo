@@ -1,5 +1,5 @@
 provider "google" {
-  project     = "	novaro-dev-2023"
+  project     = "novaro-dev-2023"
   region      = "us-central-1"
 }
 
