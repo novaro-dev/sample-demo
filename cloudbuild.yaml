@@ -1,12 +1,12 @@
 steps:
-- id: 'name'
+- id: 'getbash'
   name: 'alpine'
   entrypoint: 'sh'  
   args: 
   - '-c'
   - | 
       echo "bash"
-
+      
 - id: 'tf init'
   name: 'hashicorp/terraform:1.2.5'
   entrypoint: 'sh'
@@ -15,8 +15,7 @@ steps:
   - |
       cd dev
         terraform init
-
-# [START tf-plan]
+        
 - id: 'tf plan'
   name: 'hashicorp/terraform:1.2.5'
   entrypoint: 'sh'
@@ -25,9 +24,7 @@ steps:
   - | 
         cd dev
           terraform plan
-# [END tf-plan]
-
-# [START tf-apply]
+          
 - id: 'tf apply'
   name: 'hashicorp/terraform:1.2.5'
   entrypoint: 'sh'
@@ -36,4 +33,3 @@ steps:
   - | 
         cd dev
           terraform apply -auto-approve
-# [END tf-apply]      
