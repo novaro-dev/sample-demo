@@ -55,12 +55,13 @@ spec:
         values:
           name: ${{ parameters.name }}
 
-    # - id: fetch-docs
-    #   name: Fetch Docs
-    #   action: fetch:plain
-    #   input:
-    #     targetPath: ./community
-    #     url: https://github.com/backstage/community/tree/main/backstage-community-sessions
+    - id: replace-content
+      name: Replace file content
+      action: novaro:files:replace
+      input:
+        file: '/dev/main.tf'
+        replace: 'novaro-test-bucket-3'
+        replaceWith: ${{ parameters.bucketName }}
 
     - id: publish
       name: Publish
