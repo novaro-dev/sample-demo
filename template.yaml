@@ -24,9 +24,9 @@ spec:
             rows: 5
     - title: Bucket name
       required:
-        - name
+        - bucketName
       properties:
-        name:
+        bucketName:
           title: BucketName
           type: string
           description: Name of your bucket
@@ -51,7 +51,7 @@ spec:
       name: Fetch Base
       action: fetch:template
       input:
-        url: ./content
+        url: ./template
         values:
           name: ${{ parameters.name }}
 
@@ -75,7 +75,7 @@ spec:
       action: catalog:register
       input:
         repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
-        catalogInfoPath: '/catalog-info.yaml'
+        catalogInfoPath: 'catalog-info.yaml'
 
   output:
     links:
