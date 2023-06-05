@@ -7,12 +7,12 @@ terraform {
 }
 
 provider "google" {
-  project     = "novaro-dev-2023"
+  project     = "{{project-name}}"
   region      = "us-central-1"
 }
 
 ## Storage_Bucket_Code ## Modify below Name ##
 resource "google_storage_bucket" "my_bucket" {
-  name          = "novaro-test-bucket-3"
+  name          = "{{bucket-name}}"
   location      = "us-central1"
 }

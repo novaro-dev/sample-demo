@@ -22,10 +22,18 @@ spec:
           ui:autofocus: true
           ui:options:
             rows: 5
-    - title: Bucket name
+    - title: Fill your google infra details
       required:
+        - projectName
         - bucketName
       properties:
+        projectName:
+          title: Project Name
+          type: string
+          description: Name of your project
+          ui:autofocus: true
+          ui:options:
+            rows: 5
         bucketName:
           title: BucketName
           type: string
@@ -55,12 +63,20 @@ spec:
         values:
           name: ${{ parameters.name }}
 
-    - id: replace-content
-      name: Replace file content
+    - id: replace-project
+      name: Replace project
       action: novaro:files:replace
       input:
         file: '/dev/main.tf'
-        replace: 'novaro-test-bucket-3'
+        replace: '{{project-name}}'
+        replaceWith: ${{ parameters.projectName }}
+
+    - id: replace-bucket
+      name: Replace bucket
+      action: novaro:files:replace
+      input:
+        file: '/dev/main.tf'
+        replace: '{{bucket-name}}'
         replaceWith: ${{ parameters.bucketName }}
 
     - id: publish
