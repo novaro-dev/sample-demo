@@ -65,7 +65,7 @@ spec:
 
     - id: replace-project
       name: Replace project
-      action: novaro:files:replace
+      action: novaro:utils:files:replace
       input:
         file: '/dev/main.tf'
         replace: '{{project-name}}'
@@ -73,7 +73,7 @@ spec:
 
     - id: replace-bucket
       name: Replace bucket
-      action: novaro:files:replace
+      action: novaro:utils:files:replace
       input:
         file: '/dev/main.tf'
         replace: '{{bucket-name}}'
